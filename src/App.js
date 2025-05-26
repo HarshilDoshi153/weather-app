@@ -3,7 +3,7 @@ import './Weather.css';
 
 function App() {
   const api = {
-    key: "88f6901bb3e413e38995495a088991ef",
+    key: process.env.API_KEY,
     base: "https://api.openweathermap.org/data/2.5/"
   }
   const [query, setQuery] = useState('Ahmedabad');
@@ -11,6 +11,8 @@ function App() {
 
   const search = (event) => {
     if (event.key === 'Enter') {
+      let url = `${api.base}weather?units=metric&appid=${api.key}&q=${query}`;
+      console.log(url);
       fetch(`${api.base}weather?units=metric&appid=${api.key}&q=${query}`)
         .then((res) => res.json())
         .then((result) => {
