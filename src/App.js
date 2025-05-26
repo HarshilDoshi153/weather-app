@@ -15,7 +15,6 @@ function App() {
       fetch(`${api.base}weather?units=metric&appid=${api.key}&q=${query}`)
         .then((res) => res.json())
         .then((result) => {
-          // console.log(result.cod);
           if (result.cod === 200) {
             setWeather(result);
           }
