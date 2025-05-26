@@ -18,11 +18,9 @@ function App() {
           // console.log(result.cod);
           if (result.cod === 200) {
             setWeather(result);
-            console.log(weather);
           }
           else {
             setWeather('Information Not Found')
-            console.log(weather.main);
           }
         })
     }
